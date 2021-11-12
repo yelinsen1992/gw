@@ -1,0 +1,10 @@
+					<div class="slide-box slide-box-<%= index %>">
+						<div class="slide-img">-%>
+					<% for(var i=0; i<data['picNum']*1; i++){ %>
+							<a><img src="images/img_<%= (index - 1) %>_<%= (i+1) %>.<%= data['format'] %>" /></a>-%>
+					<% } %>
+						</div>
+						<div class="slide-num"></div>
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>

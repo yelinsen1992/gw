@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <link type="text/css" rel="stylesheet" href="css/pass_main.css" />
+  <title><%= data.name %>-游戏礼包</title>
+</head>
+<body>
+  <!-- 礼包弹窗 -->
+  <div class="popup-bg">
+    <div class="popup-gift-box">
+      <a href="javascript:;" class="popup-close" onclick="$('.popup-bg').hide();"></a>
+      <div class="inner-box">
+        <ul>
+          <li>
+            <label>名称：</label>
+            <div class="rc">《正统霸业2》官网大红包</div>
+          </li>
+          <li>
+            <label>内容：</label>
+            <div class="rc">元宝*50、五年杜康*10、银两*10W元宝*50、五年杜康*10、银两*10W</div>
+          </li>
+          <li>
+            <label>说明：</label>
+            <div class="rc">系统设置-礼包兑换-输入激活码兑换</div>
+          </li>
+          <li>
+            <label>礼包码：</label>
+            <div class="rc">
+              <span class="code">P20151209151013981954</span>
+            </div>
+          </li>
+        </ul>
+        <a href="javascript:;" class="copy">复制领取码</a>
+      </div>
+    </div>
+  </div>
+  <div class="m-bg2">
+<%- include('header', {data: curIndex}); %>
+    <div class="inside-banner"></div>
+    <div class="inside-content">
+      <div class="inside-tit tit-3">
+        <h2>礼包中心</h2>
+        <p>gift</p>
+      </div>
+      <div class="m1200">
+        <div class="location">您当前的位置：<a href="index.html">首页</a>
+          <sapn class="arrow"> &gt; </sapn>游戏礼包
+        </div>
+      </div>
+    </div>
+    <div class="m1200">
+      <div class="min-part">-%>
+        <%- include('scanBox', {data: curIndex}); %>
+      </div>
+      <div class="max-part">
+        <div class="inner-box">
+          <div class="gift-list">
+            <ul>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn active">已领完</div>
+              </li>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn" onclick="$('.popup-bg').show();">领取</div>
+              </li>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn" onclick="$('.popup-bg').show();">领取</div>
+              </li>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn" onclick="$('.popup-bg').show();">领取</div>
+              </li>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn" onclick="$('.popup-bg').show();">领取</div>
+              </li>
+              <li>
+                <div class="text">
+                  <div class="name">鼎力三国特权礼包</div>
+                  <div class="intr">黄金*20W，黑铁晶石*100，骑兽晶核*10</div>
+                </div>
+                <div class="progress-bar-box">
+                  <div class="progress-bar">
+                    <span style="width:80%;"></span>
+                  </div>
+                  <div class="number">80%</div>
+                </div>
+                <div class="get-btn" onclick="$('.popup-bg').show();">领取</div>
+              </li>
+            </ul>
+          </div>
+          <div class="page">
+            <b><a href="javascript:;">上一页</a></b>
+            <span>1</span>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <b><a href="javascript:;">下一页</a></b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include('footer/footer'+ (data.selected) +'.ejs') %>
+</body>
+<script src="js/flexible.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+  $(function () {
+    function textCopy(event) {
+      if (document.body.createTextRange) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(event);
+        range.select();
+      } else if (window.getSelection) {
+        var selection = window.getSelection();
+        var range = document.createRange();
+        range.selectNodeContents(event);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else {
+        alert("您的浏览器不支持复制功能");
+      }
+      document.execCommand('copy');
+      this.blur();
+      alert('成功复制到粘贴板');
+    };
+    $('.popup-bg').on('click', '.copy', function () {
+      var event = $('.popup-bg').find('.code')[0];
+      textCopy(event);
+    });
+  }); 
+</script>
+</html>

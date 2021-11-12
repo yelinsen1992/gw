@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <link type="text/css" rel="stylesheet" href="css/pass_main.css" />-%>
+  <%var tabData = {
+    name: ['游戏资讯', '游戏攻略'],
+    enName: ['news', 'strategy'],
+    list: [
+      ['综合', '公告', '活动', '攻略'],
+      ['新手攻略', '精选攻略']
+    ],
+    link: ['news_details.html', 'raiders_details.html']
+  } %>
+  <title><%= data.name %>-<%= tabData.name[curIndex - 2] %></title>
+</head>
+<body>
+  <div class="m-bg2">
+<%- include('header', {data: curIndex}); %>
+    <div class="inside-banner"></div>
+    <div class="inside-content">
+      <div class="inside-tit tit-<%= curIndex - 1 %>">
+        <h2><%= tabData.name[curIndex - 2] %></h2>
+        <p><%= tabData.enName[curIndex - 2] %></p>
+      </div>
+      <div class="m1200">
+        <div class="show-tab show-tab-<%= curIndex - 1 %>">
+          <ul>-%>
+            <% for (var i = 0; i < tabData.list[curIndex - 2].length; i++) { %>-%>
+              <% var curClass = '' %>-%>
+              <% if (i == 0) { %>-%>
+                <% curClass = ' on' %>-%>
+              <% } %>
+              <li class="li-<%= (i + 1) %><%= curClass %>"><a href="javascript:;"><%= tabData.list[curIndex - 2][i] %></a></li>-%>
+            <% } %>
+          </ul>
+        </div>
+        <div class="location">您当前的位置：<a href="index.html">首页</a>
+          <sapn class="arrow"> &gt; </sapn><%= tabData.name[curIndex - 2] %>
+        </div>
+      </div>
+    </div>
+    <div class="m1200">
+      <div class="min-part">-%>
+        <%- include('scanBox', {data: curIndex}); %>
+      </div>
+      <div class="max-part">
+        <div class="inner-box">
+          <div class="news-list">
+            <ul>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+              <li>
+                <span class="time">01/03</span>
+                <span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span>
+                <a href="<%= tabData.link[curIndex - 2] %>">超神攻略！《风暴部落》大神教你搭配最强阵容大神教你搭配最强阵容</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page">
+            <b><a href="javascript:;">上一页</a></b>
+            <span>1</span>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <b><a href="javascript:;">下一页</a></b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include('footer/footer'+ (data.selected) +'.ejs') %>
+</body>
+<script src="js/flexible.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+</html>

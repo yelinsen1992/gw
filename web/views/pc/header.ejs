@@ -1,0 +1,23 @@
+		<div class="top-box">
+			<div class="nav-wrap">
+				<a href="index.html" class="logo-link"></a>
+				<div class="nav">
+					<ul>-%>
+						<%var objArr = [
+									{ link: 'index.html', text: '官网首页' },
+									{ link: 'news.html', text: '游戏资讯' },
+									{ link: 'raiders.html', text: '游戏攻略' },
+									{ link: 'gift.html', text: '礼包中心' },
+									{ link: 'https://www.6kw.com/kfzx/', text: '客服中心' }
+								]%>-%>
+						<% for(var i=0; i<objArr.length; i++){ %>-%>
+						<% if(i === (data*1 - 1)) { %>
+						<li class="li-<%= (i+1) %> on"><a href="<%= objArr[i].link %>"><%= objArr[i].text %></a></li>-%>
+						<% } else { %>
+						<li class="li-<%= (i+1) %>"><a href="<%= objArr[i].link %>"><%= objArr[i].text %></a></li>-%>
+						<% } %>-%>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+		</div>

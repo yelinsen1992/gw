@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="css/pass_mail.css" />
+	<link type="text/css" rel="stylesheet" href="css/mail.css" />
+	<script type="text/javascript" src="js/flexible.js"></script>
+<% var tabData = {
+  name: ['资讯详情', '攻略详情'],
+  enName: ['news details', 'strategy details'],
+}%>-%>
+  <title><%= data.name %>-<%= tabData.name[curIndex - 2] %></title>
+</head>
+<body>
+  <div class="m-box2">
+<%- include('header', {data: curIndex}); %>
+    <div class="inside-title tit-<%= curIndex + 2 %>">
+      <h2><%= tabData.name[curIndex - 2] %></h2>
+      <span><%= tabData.enName[curIndex - 2] %></span>
+      <a href="index.html" class="back"></a>
+    </div>
+    <div class="inside-box">
+      <div class="inside-padding">
+        <div class="list-detail">
+          <p class="title">合服大作战，豪礼送不停</p>
+          <p class="text">来源：魔法门创奇&nbsp;&nbsp;作者：6kw手游&nbsp;&nbsp;时间：2016-11-14 11:04</p>
+        </div>
+        <div class="m-text">
+          南蛮入侵这个周常活动的位置在主城界面的第一排的玩法当中哦，这个活动是可以获取元宝和红将的一个周常活动，并且这个活动一个星期只有一天，并且持续时间只有四十分钟。这个活动是可以获得红将和元宝的所以是一定要参加的。那我们来看看这个周常活动是怎么玩的吧。今天就给玩家们讲解一下正统霸业的南蛮入侵的这个周常活动的基本规则和基本玩法。<br/>
+          <div style="text-align:center">
+            <a href="images/500x300.jpg">
+              <img src="images/500x300.jpg" alt="<%= data.name %>">
+            </a>
+          </div>
+          南蛮入侵这个周常活动的位置在主城界面的第一排的玩法当中哦，这个活动是可以获取元宝和红将的一个周常活动，并且这个活动一个星期只有一天，并且持续时间只有四十分钟。这个活动是可以获得红将和元宝的所以是一定要参加的。那我们来看看这个周常活动是怎么玩的吧。<br/>
+          大家可以看到活动的开启时间是周二21：00至21：30，并且这个活动也是一个军团活动，打完以后呢也是有军团拍卖的。这个活动的核心就是协助军团成员或者是自己保卫主城、来抵御侵袭获取奖励。大家可以看到下图的玩法规则，一共是有十轮的流寇部队对你发起入侵，只要守下来了就算你成功，而且有两次机会失败的机会，而且这个活动并不损害你的兵力，所以可以放心大胆的参与呢。
+        </div>
+        <div class="page-updown">
+          <a href="javascript:void(0)">上一篇：6KW《正统霸业2》职业一览</a>
+          <a href="javascript:void(0)">下一篇：6KW《正统霸业2》职业一览</a>
+        </div>
+      </div>
+    </div>
+<%- include('footer/footer2_'+ (data.selected) +'.ejs') %>
+  </div>
+</body>
+<script src="js/zepto.min.js"></script>
+</html>

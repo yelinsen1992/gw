@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成移动端官网模板</title>
+</head>
+<link rel="stylesheet" href="public/css/style.css">
+<script src="public/js/vue.min.js"></script>
+<script src="public/js/axios.min.js"></script>
+<body>
+  <div id="app">
+    <div class="tab-link">
+      <a href="/pc">PC端模板生成</a>
+      <a href="/mobile" class="on">移动端模板生成</a>
+    </div>
+    <div class="l-part">
+      <div class="item">
+        <label>1.填写官网名称</label>
+        <div class="item-r">
+          <input placeholder="请填写官网名称" v-model="sData.name" />
+        </div>
+      </div>
+      <div class="item">
+        <label>2.底部信息选择</label>
+        <div class="item-r">
+          <select v-model="sData.selected">
+            <option :value="item.id" v-for="item in footer">{{ item.name }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="item">
+        <label>3.自选板块（可增减，最多{{ initData.length }}项）</label>
+      </div>
+
+      <div class="radio-box">
+        <p>类型选择：</p>
+        <div class="radio-item" v-for="(item, i) in initData">
+          <input type="radio" :id="forId('a', i+1)" :value="i+1" v-model="gender">
+          <label :for="forId('a', i+1)">{{ item.typeIntr }}</label>
+        </div>
+        <p>图片数量：</p>
+        <div class="item">
+          <div class="item-r">
+            <input placeholder="请填写图片数量" :value="number" v-model="number" />
+          </div>
+        </div>
+        <p>图片格式：（默认jpg）</p>
+        <div class="radio-item" v-for="(item, i) in initFormat">
+          <input type="radio" :id="forId('b', i+1)" :value="i+1" v-model="format">
+          <label :for="forId('b', i+1)">{{ item }}</label>
+        </div>
+        <a href="javascript:;" class="submit" @click="add">增加板块</a>
+      </div>
+
+      <div class="part-list">
+        <p>已选自选板块列表：</p>
+        <div class="list-item item-head">
+          <span class="span-1">轮播类型</span>
+          <span class="span-2">图片数量</span>
+          <span class="span-3">格式</span>
+          <span class="span-4">操作</span>
+        </div>
+        <div class="list-item" v-for="(item, i) in sData.list">
+          <span class="span-1">{{ item.typeIntr }}</span>
+          <span class="span-2">{{ item.picNum }}</span>
+          <span class="span-3">{{ item.format }}</span>
+          <span class="span-4"><a href="javascript:;" @click="delThis(i)">删除</a></span>
+        </div>
+      </div>
+      <a href="javascript:;" @click="submit" class="submit">生成静态</a>
+    </div>
+    <div class="r-part" v-show="showIf">
+      <p>一、填写官网名称</p>
+      <img src="public/images/01.jpg">
+      <p>二、首页游戏资讯（固定的，无需设置）</p>
+      <img src="public/images/m_02.jpg" width="180">
+      <p>三、自选板块<br/>
+        1.渐变或左右切换轮播<br/>
+        2.三联或多联旋转木马（图片3个起） <br/>
+      </p>
+      <div class="img-item">
+        <img src="public/images/m_03_1.jpg">
+        <img src="public/images/m_03_2.jpg">
+      </div>
+    </div>
+    <div class="loading-bg-wrap" v-show="loadingShow">
+      <div class="loading-bg">
+        <div class="loading"></div>
+        <p>正在提交中....</p>
+      </div>
+    </div>
+    <div class="msg-box-wrap" v-show="msgShow">
+      <div class="msg-box">{{ msgTxt }}</div>
+    </div>
+  </div>
+</body>
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data(){
+      return{
+        winW : '',
+        showIf : true,
+        loadingShow: false,
+        msgShow: false,
+        msgTxt: '',
+        gender: 1,
+        format: 1,
+        number: 3,
+        initData: [
+            {
+              type: 1,
+              typeIntr: '渐变轮播',
+              picNum: 4
+            },
+            {
+              type: 2,
+              typeIntr: '无缝轮播',
+              picNum: 4
+            },
+            {
+              type: 3,
+              typeIntr: '三联旋转木马',
+              picNum: 5
+            },
+            {
+              type: 4,
+              typeIntr: '多联旋转木马',
+              picNum: 5
+            }
+        ],
+        initFormat: [
+            'jpg',
+            'png'
+        ],
+        sData : {
+          name : '铁杆三国',
+          list : [],
+          selected: 1
+        },
+        footer : [
+          {
+            name : '上海弘贯',
+            id : 1
+          },
+          {
+            name : '9G玩',
+            id : 2
+          },
+          {
+            name : '百趣玩',
+            id : 3
+          },
+        ]
+      }
+    },
+    mounted(){
+      const _this = this
+      window.addEventListener('resize', () => {
+        window.innerWidth > 1000 ? _this.showIf = true : _this.showIF = false
+      })
+    },
+    watch: {
+      winW(a, b) {
+        console.log(a, b)
+      }
+    },
+    methods: {
+      submit: function(){
+        var _this = this;
+        if (this.sData.name === '') {
+          this.msg('官网名称不能为空');
+          return false;
+        }
+        _this.loading(true);
+        axios.post('/bulid?action=htmlMobile', _this.sData).then((res) => {
+          _this.loading(false);
+          console.log(res)
+        }).catch((err) => {
+          _this.loading(false);
+          console.log(err)
+        })
+      },
+      delThis: function(i){
+        this.sData.list.splice(i, 1)
+      },
+      forId: function(n, i){
+        return n + "-radio-" + i
+      },
+      add: function(){
+        if (this.sData.list.length === this.initData.length) {
+          this.msg('最多添加'+ this.initData.length +'个板块');
+          return false;
+        }
+        if (this.gender == '' || this.number == '') {
+          this.msg('内容要填写完整');
+          return false;
+        };
+        var obj = {
+          "type": this.gender,
+          "typeIntr": this.initData[this.gender - 1].typeIntr,
+          "picNum": this.number*1,
+          "format": this.initFormat[this.format - 1]
+        };
+        console.log(obj)
+        this.sData.list.push(obj)
+      },
+      loading: function(para){
+        this.loadingShow = para
+      },
+      msg: function(txt){
+        var _this = this;
+        _this.msgTxt = txt;
+        _this.msgShow = true;
+        setTimeout(function(){
+          _this.msgTxt = '';
+          _this.msgShow = false;
+        },1000)
+      }
+    }
+  })
+</script>
+</html>

@@ -1,0 +1,10 @@
+					<div class="swiper-container swiper-container-<%= index %>">
+						<div class="swiper-wrapper">-%>
+					<% for(var i=0; i<data['picNum']*1; i++){ %>
+							<div class="swiper-slide"><img src="images/m_img_<%= (index - 1) %>_<%= (i+1) %>.<%= data['format'] %>" /></div>-%>
+					<% } %>
+						</div>
+						<div class="swiper-pagination-<%= index %>"></div>
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>

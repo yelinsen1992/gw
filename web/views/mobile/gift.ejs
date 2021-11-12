@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="css/pass_mail.css" />
+	<link type="text/css" rel="stylesheet" href="css/mail.css" />
+	<script type="text/javascript" src="js/flexible.js"></script>
+  <title><%= data.name %>-游戏礼包</title>
+</head>
+<body>
+  <div class="m-box2">
+<%- include('header', {data: curIndex}); %>
+    <div class="inside-title tit-3">
+      <h2>礼包中心</h2>
+      <span>gift</span>
+      <a href="index.html" class="back"></a>
+    </div>
+    <div class="inside-box">
+      <div class="gift-list">
+        <div class="wechat-box">
+          <div class="pic"><img src="images/wx_icon.png"></div>
+          <div class="wechat-text">
+            <p class="title">微信关注礼包</p>
+            <p class="intr">6kw公众号<span>M-6kgame</span></p>
+          </div>
+          <a href="javascript:;" class="copy">复制号码</a>
+        </div>
+        <div class="wechat-box">
+            <div class="pic">
+                <img src="images/gift_icon.png">
+            </div>
+            <div class="wechat-text">
+                <p class="title">绑定手机赢专属礼包</p>
+            </div>
+            <a href="javascript:;" class="bind"></a>
+        </div>
+        <ul>
+          <li>
+            <span class="text">《幻城修仙录》新手礼包</span>
+            <a href="javascript:;" class="get-btn active">已经领完</a>
+          </li>
+          <li>
+            <span class="text">《幻城修仙录》新手礼包</span>
+            <a href="javascript:$('.popup-bg').show();" class="get-btn">领取礼包</a>
+          </li>
+          <li>
+            <span class="text">《幻城修仙录》新手礼包</span>
+            <a href="javascript:$('.popup-bg').show();" class="get-btn">领取礼包</a>
+          </li>
+          <li>
+            <span class="text">《幻城修仙录》新手礼包</span>
+            <a href="javascript:$('.popup-bg').show();" class="get-btn">领取礼包</a>
+          </li>
+        </ul>
+        <div class="load-more-btn active"></div>
+      </div>
+    </div>
+<%- include('footer/footer2_'+ (data.selected) +'.ejs') %>
+  </div>
+  <!-- 礼包弹窗 -->
+  <div class="popup-bg">
+    <div class="popup-gift-box">
+      <a href="javascript:$('.popup-bg').hide();;" class="popup-close"></a>
+      <div class="inner-box">
+        <ul>
+          <li>
+            <label>名称：</label>
+            <div class="rc">《正统霸业2》官网大红包</div>
+          </li>
+          <li>
+            <label>内容：</label>
+            <div class="rc">元宝*50、五年杜康*10、银两*10W元宝*50、五年杜康*10、银两*10W</div>
+          </li>
+          <li>
+            <label>说明：</label>
+            <div class="rc">系统设置-礼包兑换-输入激活码兑换</div>
+          </li>
+          <li>
+            <label>礼包码：</label>
+            <div class="rc">
+              <span class="code">P20151209151013981954</span>
+            </div>
+          </li>
+        </ul>
+        <a href="javascript:;" class="copy">复制领取码</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script>
+  $(function () {
+    function textCopy(event) {
+      if (document.body.createTextRange) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(event);
+        range.select();
+      } else if (window.getSelection) {
+        var selection = window.getSelection();
+        var range = document.createRange();
+        range.selectNodeContents(event);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else {
+        alert("您的浏览器不支持复制功能");
+      }
+      document.execCommand('copy');
+      this.blur();
+      alert('成功复制到粘贴板');
+    };
+    $('.wechat-box').on('click','.copy',function(){
+      var event = $('.wechat-box').find('.wechat-text .intr span')[0];
+      textCopy(event);
+    }); 
+    $('.popup-bg').on('click', '.copy', function () {
+      var event = $('.popup-bg').find('.code')[0];
+      textCopy(event);
+    });
+  }); 
+</script>
+</html>

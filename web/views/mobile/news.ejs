@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="css/pass_mail.css" />
+	<link type="text/css" rel="stylesheet" href="css/mail.css" />
+	<script type="text/javascript" src="js/flexible.js"></script>
+<%var tabData = {
+  name: ['游戏资讯', '游戏攻略'],
+  enName: ['news', 'strategy'],
+  list: [
+    ['综合', '公告', '活动', '攻略'],
+    ['新手攻略', '精选攻略']
+  ],
+  link: ['news_details.html', 'raiders_details.html']
+} %>-%>
+  <title><%= data.name %>-<%= tabData.name[curIndex - 2] %></title>
+</head>
+<body>
+  <div class="m-box2">
+<%- include('header', { data: curIndex }); %>
+    <div class="inside-title tit-<%= curIndex - 1 %>">
+      <h2><%= tabData.name[curIndex - 2] %></h2>
+      <span><%= tabData.enName[curIndex - 2] %></span>
+      <a href="index.html" class="back"></a>
+    </div>
+    <div class="inside-box tab-box">
+      <ul class="tab-num tab-num-<%= curIndex - 1 %>">-%>
+      <% for (var i = 0; i < tabData.list[curIndex - 2].length; i++) { %>-%>
+        <% var curClass = ''; %>-%>
+          <% if (i == 0) { %>-%>
+          <% curClass = ' on' %>-%>
+          <% } %>
+        <li class="li-<%= (i + 1) %><%= curClass %>"><a href="javascript:;"><%= tabData.list[curIndex - 2][i] %></a></li>-%>
+      <% } %>
+      </ul>
+      <div class="tab-con">
+        <ul class="news-list">
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+          <li><span class="type"><%= tabData.list[curIndex - 2][3 - curIndex] %></span><a href="<%= tabData.link[curIndex - 2] %>">仙迹之修仙传》精灵捕获</a><span class="time">09/17</span></li>
+        </ul>
+        <div class="load-more-btn"></div>
+      </div>
+    </div>
+<%- include('footer/footer2_'+ (data.selected) +'.ejs') %>
+  </div>
+</body>
+<script src="js/zepto.min.js"></script>
+</html>

@@ -1,0 +1,390 @@
+.pass_img {
+  background-image: url(../images/pass_img.png);
+  background-repeat: no-repeat
+}
+
+.min {
+  background: #FFF;
+  border-bottom: 1px solid #f5f5f5;
+  height: 50px;
+  line-height: 50px;
+  min-width: 1200px
+}
+
+.min .min_logo {
+  float: left;
+  display: block;
+  background-position: 0 0;
+  width: 80px;
+  height: 41px;
+  margin-top: 5px
+}
+
+.min_push_list {
+  padding-left: 30px
+}
+
+.min_push_list .title {
+  float: left;
+  display: block;
+  font-weight: bold;
+  color: #ff601b;
+  font-size: 12px;
+}
+
+.min_push_list a {
+  float: left;
+  display: block;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.min_push_list a:hover {
+  color: #eb5d56;
+}
+
+.min_push_list .line {
+  display: block;
+  float: left;
+  color: #e8e8e8;
+  font-size: 12px;
+}
+
+.min .login {
+  padding-top: 9px
+}
+
+.min .login a {
+  display: block;
+  float: left;
+  background: rgba(75, 173, 255, 1);
+  border: 1px solid rgba(75, 173, 255, 1);
+  border-radius: 15px;
+  font-size: 14px;
+  color: #FFF;
+  text-align: center;
+  line-height: 30px;
+  padding: 0 20px;
+  transition: all 0.3s linear
+}
+
+.min .login a:hover {
+  background: #2584ff;
+  border-color: #2584ff;
+  color: #FFF
+}
+
+.min .login .reg_btn {
+  background: rgba(255, 186, 0, 0.1);
+  border: 1px solid rgba(255, 186, 0, 0.5);
+  color: #ffba00;
+  margin-left: 10px;
+}
+
+.min .login .reg_btn:hover {
+  background: #ffba00;
+  border-color: #ffba00;
+  color: #FFF
+}
+
+.min .min_user_info {
+  font-size: 12px;
+  color: #999;
+  line-height: 50px
+}
+
+.min .min_user_info .back {
+  color: #ff601b;
+}
+
+.popup_box {
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  _position: absolute;
+  z-index: 998
+}
+
+.popup_box .popup_title {
+  background: #333;
+  height: 50px;
+  z-index: 1;
+  position: relative
+}
+
+.popup_box .popup_title .title {
+  float: left;
+  font-size: 18px;
+  color: #e0e0e0;
+  line-height: 50px;
+  padding-left: 30px
+}
+
+.popup_box .popup_close {
+  display: block;
+  background: url(../images/x_but.png) no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transition: all 0.2s linear
+}
+
+.popup_box .popup_close:hover {
+  transform: rotate(90deg)
+}
+
+.popup_bg {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  _position: absolute;
+  z-index: 997
+}
+
+.login_box {
+  width: 400px;
+  margin: -120px 0 0 -200px;
+  _top: expression(documentElement.scrollTop + 160 + "px");
+}
+
+.login_top {
+  line-height: 30px;
+  height: 30px;
+  padding-top: 10px
+}
+
+.login_top h2 {
+  display: block;
+  background-position: 0 -50px;
+  font-size: 16px;
+  font-weight: 100;
+  color: #FFF;
+  text-align: center;
+  width: 124px;
+  margin-left: -10px
+}
+
+.login_m {
+  padding: 40px 50px
+}
+
+.login_m .input_box {
+  background: #F8F8F8;
+  border: 1px solid #ededed;
+  height: 30px;
+  width: 100%;
+  padding: 4px 0;
+  margin-top: -1px
+}
+
+.login_m .input_box label {
+  float: left;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px
+}
+
+.login_m .input_box .user {
+  background-position: 0 -55px
+}
+
+.login_m .input_box .cipher {
+  background-position: 0 -85px
+}
+
+.login_m .text {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #999;
+  line-height: 30px;
+  height: 30px;
+  width: 250px;
+  margin: 0
+}
+
+.login_m .btn_go {
+  display: block;
+  background: #029d1e;
+  border: none;
+  font-size: 20px;
+  font-family: "微软雅黑";
+  color: rgba(255, 255, 255, 0.8) !important;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  line-height: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.2s linear 0s
+}
+
+.login_m .btn_go:hover {
+  background: #028918
+}
+
+.popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  text-align: center;
+  font-size: 0;
+  letter-spacing: -5px;
+  display: none;
+}
+
+.popup-bg::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.popup-bg .popup-gift-box .popup-close {
+  position: absolute;
+  background: url(../images/x_but_2.png) no-repeat;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-size:100%;
+  top: -0.3rem;
+  right: -0.7rem;
+  z-index: 2;
+  transition: all 0.2s linear;
+}
+
+.popup-bg .popup-gift-box .popup-close:hover {
+  transform: rotate(90deg);
+}
+
+.popup-bg .popup-gift-box {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: normal;
+  box-sizing: border-box;
+  padding: 0.5rem 0.5rem 0.4rem;
+  width: 5.8rem;
+  min-height: 3.7rem;
+  background: #fff;
+  border-radius:0.1rem;
+}
+
+.popup-bg .popup-gift-box ul {
+  display: table;
+  margin: 0 auto;
+}
+
+.popup-bg .popup-gift-box li {
+  padding: 0.1rem 0;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.popup-bg .popup-gift-box li>* {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.2rem;
+  color: #333333;
+  line-height: 150%;
+}
+
+.popup-bg .popup-gift-box .rc {
+  max-width: 4rem;
+  vertical-align: top;
+}
+
+.popup-bg .popup-gift-box .rc .code {
+  color: #fa1d2d;
+}
+
+.popup-bg .popup-gift-box .copy {
+  display:block;
+  font-size: 0.2rem;
+  color: #fff;
+  letter-spacing:0.02rem;
+  width: 1.85rem;
+  height: 0.52rem;
+  line-height: 0.52rem;
+  text-align: center;
+  background:#ba9261;
+  border-radius:0.03rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin:0.2rem auto 0;
+}
+
+.foot {
+  background: #333;
+  text-align: center;
+  min-width: 1200px;
+}
+
+.foot-nav {
+  background: #2e2e2e;
+  font-size: 14px;
+  color: #acacac;
+  line-height: 30px;
+  padding: 10px 0
+}
+
+.foot-nav .line {
+  display: inline-block;
+  color: #484848;
+  padding: 0 20px
+}
+
+.foot-nav a {
+  display: inline-block;
+  color: #acacac
+}
+
+.foot-nav a:hover {
+  color: #ffdb01
+}
+
+.foot-copy {
+  padding: 30px 0
+}
+
+.foot-copy,
+.foot-copy>* {
+  font-size: 12px;
+  color: #858585;
+  line-height: 25px;
+  vertical-align: middle;
+}
+
+.foot-copy a:hover {
+  color: #ffdb01
+}
+
+.foot-copy .choice {
+  font-size: 14px;
+  padding-bottom: 10px
+}
+
+.foot-copy .choice .line {
+  color: #5c5c5c;
+  padding: 0 15px
+}
+
+.foot-copy img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}

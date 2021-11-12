@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<% if (data.fullScreen) { %>
+	<link type="text/css" rel="stylesheet" href="css/swiper.min.css" />
+	<% } %>
+	<link type="text/css" rel="stylesheet" href="css/main.css" />
+	<link type="text/css" rel="stylesheet" href="css/pass_main.css" />
+	<title><%= data.name %>-官网首页</title>
+</head>
+<body>
+	<div class="min">
+		<div class="m1200">
+			<a target="_blank" href="https://www.6kw.com" class="pass_img min_logo"></a>
+			<div class="fl min_push_list">
+				<span class="title">推荐游戏：</span>
+				<a target="_blank" href="https://www.6kw.com/dlsg/">攻城三国</a>
+				<span class="line">|</span></div>
+			<!--登录注册-->
+			<div class="fr login" id="no_login" style="">
+				<a href="javascript:void(0);" id="popup1">登录</a>
+				<a target="_blank" href="https://www.6kw.com/turn.php?act=reg" class="reg_btn">注册</a></div>
+			<!--信息-->
+			<div class="fr min_user_info" id="ok_login" style="display:none">
+				<span id="user"></span>
+				<a target="_blank" href="https://www.6kw.com/user.php" class="back">【用户中心】</a>
+				<a href="https://www.6kw.com/turn.php?act=logout" class="back">【注销】</a></div>
+		</div>
+	</div>
+	<div class="m-bg">
+		<!-- 导航部分 -->
+<%- include('header', {data: curIndex}); %>
+		<!-- 主体内容部分 -->
+		<div class="part-box">
+			<!-- 首屏 -->
+			<div class="banner part">
+<% if (data.videoBg) { %>
+				<div class="video-bg">
+					<video src="images/banner.mp4" loop autoplay muted></video>
+				</div>
+<% } %>
+<% if (data.video) { %>
+	<div class="video-play"></div>
+	<div class="popup-video">
+		<div class="video-box">
+			<div class="close"></div>
+			<video src="images/video.mp4"></video>			
+		</div>
+	</div>
+<% } %>
+				<div class="m1200">-%>
+					<%- include('scanBox', {data: curIndex}); %>
+				</div>
+			</div>
+			<!-- 游戏资讯 -->
+			<div class="part part-1">
+				<div class="m1200">
+					<div class="slide-box slide-box-1">
+						<div class="slide-img">
+							<a href="javascript:void(0);"><img src="images/pic_1.png" /></a>
+							<a href="javascript:void(0);"><img src="images/pic_1.png" /></a>
+						</div>
+						<div class="slide-num"></div>
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+					<div class="news-box">
+						<div class="tab-num">
+							<ul>
+								<li class="li-1"><a href="javascript:void(0);">最新</a></li>
+								<li class="li-2"><a href="javascript:void(0);">公告</a></li>
+								<li class="li-3"><a href="javascript:void(0);">活动</a></li>
+								<li class="li-4"><a href="javascript:void(0);">攻略</a></li>
+							</ul>
+							<a href="news.html" class="more">更多</a>
+						</div>
+						<div class="tab-con">
+							<ul>
+								<li>
+									<span class="type">精选攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号
+										剑指今夏最热网游今夏最热网游今夏最热网游剑指今夏最热网游今夏最热网游今夏最热网游剑指今夏最热网游今夏最热网游今夏最热网游剑指今夏最热网游今夏最热网游今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">精选攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游宣布7.1不限号 剑指今夏最热网游宣布7.1不限号
+										剑指今夏最热网游宣布7.1不限号 剑指今夏最热网游宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">活动</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">活动</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">活动</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-con">
+							<ul>
+								<li>
+									<span class="type">公告</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">公告</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">公告</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-con">
+							<ul>
+								<li>
+									<span class="type">活动</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">活动</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-con">
+							<ul>
+								<li>
+									<span class="type">攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+								<li>
+									<span class="type">攻略</span>
+									<a href="javascript:void(0);">天涯明月刀宣布7.1不限号 剑指今夏最热网游</a>
+									<span class="time">09/08</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>-%>
+			<% data.list.forEach(function(item, index){ %>
+			<div class="part part-<%= (index + 2) %>">
+				<div class="m1200">
+<%- include('partType/type.ejs', {data: item, index: (index + 2) }) %>
+				</div>
+			</div>-%>
+			<% }); %>
+		</div>
+	</div>
+	<!-- 底部 -->
+<%- include('footer/footer'+ (data.selected) +'.ejs') %>
+</body>
+<script src="js/flexible.js"></script>
+<% if (data.fullScreen) { %>
+<script src="js/swiper.min.js"></script>
+<% } %>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/plugs.js"></script>
+<script src="js/main.js"></script>
+</html>
